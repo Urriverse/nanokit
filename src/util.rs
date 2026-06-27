@@ -11,6 +11,8 @@ pub macro SYMBOL (
 }
 
 pub macro meta($n:expr) {
+    #[cfg(not(test))] panic_handler![];
+    
     pub macro mod_ident() {
         $n
     }
