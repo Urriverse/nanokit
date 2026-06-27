@@ -10,3 +10,4 @@ pub mod ga;
 
 pub use macros::*;
 pub use util::*;
+pub use log::*;

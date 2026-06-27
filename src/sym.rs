@@ -8,4 +8,5 @@ crate::util::SYMBOL! {
     pub k_alloc : fn (core::alloc::Layout) -> *mut u8   = stub::alloc   ;
 
     pub k_free  : fn (*mut u8, core::alloc::Layout)     = stub::free    ;
+    pub k_log   : fn (crate::log::AttLvl, &'static str, &'static str, u32, core::fmt::Arguments<'_>) = stub::log;
 }

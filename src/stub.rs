@@ -17,3 +17,7 @@ pub fn alloc(_: core::alloc::Layout) -> *mut u8 {
 pub fn free(_: *mut u8, _: core::alloc::Layout) {
     /* nothing */
 }
+
+pub fn log(_: crate::log::AttLvl, _: &'static str, _: &'static str, _: u32, _: core::fmt::Arguments<'_>) {
+    /* nothing */
+}
