@@ -13,8 +13,9 @@ pub macro SYMBOL (
 pub macro meta($n:expr) {
     #[cfg(not(test))] panic_handler![];
 
-    pub macro mod_ident() {
-        $n
+    #[macro_export]
+    macro_rules! mod_ident {
+        () => { $n }
     }
 
     SYMBOL! { pub MODNAME: &'static str = $n; }
