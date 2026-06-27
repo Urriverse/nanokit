@@ -1,4 +1,5 @@
 #[unsafe(no_mangle)]
-pub fn _start(st: crate::kst::KeSysTab) {
+#[allow(improper_ctypes_definitions)]
+pub(crate) extern "C" fn _start(st: crate::kst::KeSysTab) {
     (st.suicide)()
 }

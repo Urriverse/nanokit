@@ -1,7 +1,7 @@
 #![no_std]
 
-#[allow(unused)] #[macro_use] extern crate alloc;
+#[allow(unused)] #[macro_use] pub extern crate alloc;
 
-mod entry;
-mod panic;
-mod kst;
+pub mod entry;
+pub mod panic;
+pub mod kst;
