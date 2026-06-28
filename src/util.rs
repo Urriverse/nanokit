@@ -12,7 +12,7 @@ pub macro SYMBOL (
 
 pub macro meta($n:expr) {
     #[cfg(not(test))] panic_handler![];
-    
+
     SYMBOL! { pub MODNAME: &'static str = $n; }
 }
 
@@ -22,5 +22,13 @@ pub macro entry( $($b:tt)* ) {
         $(
             $b
         )*
+    }
+}
+
+pub macro Ke( $( $x:ident or $d:expr )+ ) {
+    SYMBOL! {
+        $(
+            pub $x: $x = $d;
+        )+
     }
 }
