@@ -2,9 +2,9 @@ use crate::*; use ketypes::*;
 
 Ke!
 {
-    KeMemAlloc              or  |_|     0 as _
+    KeMemAlloc              or  |_|     { error!("KeMemAlloc not provided"); 0 as _}
 
-    KeMemFree               or  |_,_|   ()
+    KeMemFree               or  |_,_|   { error!("KeMemFree not provided"); }
 
     KeMemAllocStack         or  |_|     KeVaddr::from_raw(0)
 
