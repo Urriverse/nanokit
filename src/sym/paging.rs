@@ -1,14 +1,14 @@
-use crate::*; use ketypes::*;
+// use crate::*; use ketypes::*;
 
-Ku!
-{
-    KePagingMap             or  |_,_,_,_|   Err("function not provided")
+// Ku!
+// {
+//     KePagingMap             or  |_,_,_,_|   Err("function not provided")
 
-    KePagingRemap           or  |_,_,_|     Err("function not provided")
+//     KePagingRemap           or  |_,_,_|     Err("function not provided")
 
-    KePagingUnmap           or  |_,_|       Err("function not provided")
+//     KePagingUnmap           or  |_,_|       Err("function not provided")
 
-    KePagingMerge           or  |_,_|       ()
+//     KePagingMerge           or  |_,_|       ()
 
-    KePagingQuery           or  |_|         None
-}
+//     KePagingQuery           or  |_|         None
+// }

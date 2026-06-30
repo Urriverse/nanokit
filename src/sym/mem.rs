@@ -1,14 +1,16 @@
 use crate::*; use ketypes::*;
 
-Ku!
-{
-    KeMemAlloc              or  |_|     { error!("KeMemAlloc not provided"); 0 as _}
+Import! {
+    pub fn MemAlloc(layout: core::alloc::Layout) -> *mut u8 where kernel 0.0 {
+        let _ = layout;
+        error!("MemAlloc not provided");
+        0 as _
+    }
+}
 
-    KeMemFree               or  |_,_|   { error!("KeMemFree not provided"); }
-
-    KeMemAllocStack         or  |_|     KeVaddr::from_raw(0)
-
-    KeMemVirtToPhys         or  |_|     KePaddr::from_raw(0)
-
-    KeMemPhysToVirt         or  |_|     KeVaddr::from_raw(0)
+Import! {
+    pub fn MemFree(ptr: *mut u8, layout: core::alloc::Layout) where kernel 0.0 {
+        let _ = (ptr, layout);
+        error!("MemFree not provided");
+    }
 }

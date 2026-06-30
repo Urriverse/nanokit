@@ -1,20 +1,27 @@
-use crate::*; use ketypes::*;
+use ketypes::*; use crate::*;
 
-Ku!
-{
-    KeExecPanic             or   |_|            { error!("KeExecPanic not provided"); loop{core::hint::spin_loop()} }
+Import! {
+    pub fn ExecPanic(info: &core::panic::PanicInfo) -> ! where kernel 0.0 {
+        panic_msg!("ExecPanic not provided");
+        loop{core::hint::spin_loop()}
+    }
+}
 
-    KeExecExit              or   |_|            { error!("KeExecExit not provided"); loop{core::hint::spin_loop()} }
+Import! {
+    pub fn ExecExit(code: i32) -> ! where kernel 0.0 {
+        panic_msg!("ExecExit not provided, tried to exit with code = {}", code);
+        loop{core::hint::spin_loop()}
+    }
+}
 
-    KeExecYield             or   ||             { error!("KeExecYield not provided"); }
+Import! {
+    pub fn ExecYield() where kernel 0.0 {
+        error!("ExecYield not provided");
+    }
+}
 
-    KeExecSleep             or   |_|            { error!("KeExecSleep not provided"); }
-
-    KeExecSpawn             or   |_,_,_,_,_|    { error!("KeExecSpawn not provided"); 0 }
-
-    KeExecArgumentedSpawn   or   |_,_,_,_,_,_|  { error!("KeExecArgumentedSpawn not provided"); 0 }
-
-    KeExecWaitChild         or   |_|            { error!("KeExecWaitChild not provided"); -1 }
-
-    KeExecSetDeadline       or   |_,_|          { error!("KeExecSetDeadline not provided"); }
+Import! {
+    pub fn ExecSleep() where kernel 0.0 {
+        error!("ExecYield not provided");
+    }
 }

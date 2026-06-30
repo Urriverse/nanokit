@@ -7,7 +7,7 @@ struct __GA;
 static __GA_INSTANCE: __GA = __GA;
 
 unsafe impl core::alloc::GlobalAlloc for __GA {
-    unsafe fn alloc(&self, layout: core::alloc::Layout) -> *mut u8 { KeMemAlloc(layout) }
+    unsafe fn alloc(&self, layout: core::alloc::Layout) -> *mut u8 { MemAlloc(layout) }
 
-    unsafe fn dealloc(&self, ptr: *mut u8, layout: core::alloc::Layout) { KeMemFree(ptr, layout) }
+    unsafe fn dealloc(&self, ptr: *mut u8, layout: core::alloc::Layout) { MemFree(ptr, layout) }
 }

@@ -19,5 +19,3 @@ pub use log::*;
 pub use sym::*;
 
 pub use front::*;
-
-use alloc::string::ToString;
