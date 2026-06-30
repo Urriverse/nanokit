@@ -1,8 +1,15 @@
 use crate::*; use ketypes::*;
 
+Import! {
+    pub fn KeVtDeviceNew(name: KeStr) -> Option<Box![KeDevice]> where kernel 0.0 {
+        let _ = name;
+        None
+    }
+}
+
 Ku!
 {
-    KeVtDeviceNew           or  |_|     { error!("KeVtDeviceNew not provided"); None}
+    // KeVtDeviceNew           or  |_|     { error!("KeVtDeviceNew not provided"); None}
 
     KeDeviceAddMethod       or  |_,_,_| { error!("KeDeviceAddMethod not provided"); }
 
